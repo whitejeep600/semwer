@@ -50,11 +50,6 @@
 
 \maketitle
 
-widoczność funkcji jest statyczna - tzn jeśli mamy funkcję f która wywołuje funkcję g, i w momencie deklaracji f jest widoczna g, a potem w jakimś bloku mamy przesłonioną definicję g i wywołamy f, to f skorzysta z tego g, które zobaczyła w momencie deklaracji, a nie wywołania. innymi słowy funkcje pamiętają środowisko funkcji z momentu deklaracji (wywołanie nie przyjmuje środowiska funkcji jako argumentu - no w każdym razie, na slajdach było jak zrobić widoczność statyczną)
-
-w momencie wywołania funkcji przekazujemy jej dwie kontynuacje - domyślną i returnową, przy czym obie są kontynuacjami wyrażeń, oczekującymi argumentu w postaci albo zwróconego przez return wyrażenia, albo wartości domyślnej
-
-
 \section*{Dziedziny semantyczne}
 
 \subsection*{Stan}
@@ -112,9 +107,10 @@ $$
 Gdzie $\text{FName}$ to nazwy funkcji, natomiast funkcje reprezentuje typ $\text{Fun}$:
 
 $$
-\text{Fun} = \text{Cont}_E \longrightarrow \text{State} \rightharpoonup \text{Ans}
+\text{Fun} = (\text{Cont} \longrightarrow \text{Cont}_E \longrightarrow \text{State} \rightharpoonup \text{Ans}) \times \text{Expr}
 $$
-todo uważać na funkcje deklarowane w ciele innej funkcji
+
+Jak warto zauważyć, w pierwszej części produktu podajemy jako argumenty dwie różne kontynuacje. Ma to na celu umożliwienie zarówno wykonania całości ciała funkcji, jak i wyjście z niej wcześniej za pomocą instrukcji $\texttt{return}$. Ta pierwsza część intuicyjnie jest odpowiedzialna za wykonanie ciała funkcji. Natomiast druga część produktu to wyrażenie odpowiedzialne za domyślny wynik działania funkcji. W środowisku należy pamiętać całe to wyrażenie, gdyż będzie ono wyliczane przed każdym wywołaniem funkcji.
 
 
 \section*{Typy funkcji semantycznych}
@@ -124,7 +120,7 @@ $$
 \mathcal{I}[\![]\!]: \text{Instr} \longrightarrow \text{FEnv} \longrightarrow \text{Cont} \longrightarrow \text{Cont}_E \longrightarrow \text{State} \rightharpoonup \text{Ans}
 $$
 
-Jak warto zauważyć, podajemy tutaj jako argumenty dwie różne kontynuacje. Ma to na celu umożliwienie zarówno wykonania całości ciała funkcji, jak i wyjście z niej wcześniej za pomocą instrukcji $\texttt{return}$. Dla wyrażeń arytmetycznych jest:
+Ponownie, i z analogicznych powodów, mamy tu dwie różne kontynuacje. Dla wyrażeń arytmetycznych jest:
 $$
 \mathcal{E}[\![]\!]: \text{Expr} \longrightarrow \text{FEnv} \longrightarrow \text{Cont}_E \longrightarrow \text{State} \rightharpoonup \text{Ans}
 $$
@@ -147,7 +143,7 @@ $$
 $$
 \mathcal{E}[\![n]\!] \rho_F \; \kappa_E \; s = \kappa_E(\mathcal{N}[\![n]\!])
 $$
-tylko zaraz. w takim razie jak przekazujemy domyślny wynik funkcji? bo jego też powinna oczekiwać jakaś kontynuacja wyrażenia arytmetycznego, a w denotacji instrukcji jest tylko jeden argument będący nią, który odpowiada za wyjście przez return. odpowiedź: to jest chyba opędzlowane w taki sposób, że domyślnego wyniku wcale nie oczekuje kontynuacja wyrażenia arytmetycznego, tylko kontynuacja po prostu - ona ma tę domyślną wartość już wstawioną. ale to się zobaczy.
+
 
 denotacja odwołania się do zmiennej
 
@@ -156,9 +152,15 @@ denotacja plusa
 wzmianka że denotacje minusa i mnożenia są takie same
 
 $$
-\mathcal{E}[\![ f() ]\!] \rho_F \; \kappa_E \; s = 
+\mathcal{E}[\![ f() ]\!] \rho_F \; \kappa_E \; s = \mathcal{E}[\![ e_d ]\!] \rho_F (\lambda n. \; \beta \; \kappa_E(n) \; \kappa_E) s
 $$
-przekazujemy kontrolę funkcji f, przy czym jedną z przekazywanych kontynuacji jest kappa E od wartości domyślnej, a drugą jest kappa E
+gdzie
+$$
+\rho_F(f) = (\beta, e_d)
+$$
+
+Innymi słowy, wyciągamy ze środowiska funkcji krotkę oznaczającą ciało funkcji i jej wyrażenie domyślne, i przekazujemy kontrolę wyrażeniu domyślnemu, mówiąc, że tym, co się stanie z jego wynikiem $n$, będzie nowo skonstruowana kontynuacja zależna od $n$. Ta kontynuacja z kolei jest wykonaniem ciała funkcji, biorąc jako kontynuację domyślną $\kappa_E(n)$, a jako kontynuację dla instrukcji $\texttt{return}$ - $\kappa_E$.
+
 
 denotacja literału bulionowego
 
@@ -169,6 +171,7 @@ denotacja koniunkcji sfer
 denotacja równości dwóch wyrażeń, ojej
 
 wzmianka że denotacja znaku mniejszości działa tak samo
+
 \subsection*{Denotacje instrukcji}
 
 denotacja przypisania
@@ -184,6 +187,8 @@ denotacja bloku
 denotacja returna?
 
 \subsection*{Denotacje deklaracji}
+
+widoczność funkcji jest statyczna - tzn jeśli mamy funkcję f która wywołuje funkcję g, i w momencie deklaracji f jest widoczna g, a potem w jakimś bloku mamy przesłonioną definicję g i wywołamy f, to f skorzysta z tego g, które zobaczyła w momencie deklaracji, a nie wywołania. innymi słowy funkcje pamiętają środowisko funkcji z momentu deklaracji (wywołanie nie przyjmuje środowiska funkcji jako argumentu - no w każdym razie, na slajdach było jak zrobić widoczność statyczną)
 
 funkcje są rekurencyjne, więc definicja deklaracji funkcji musi być stałopunktowa.
 
