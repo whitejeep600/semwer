@@ -141,15 +141,20 @@ $$
 \subsection*{Denotacje wyrażeń}
 
 $$
-\mathcal{E}[\![n]\!] \rho_F \; \kappa_E \; s = \kappa_E(\mathcal{N}[\![n]\!])
+\mathcal{E}[\![n]\!] \rho_F \; \kappa_E \; s = \kappa_E(\mathcal{N}[\![n]\!]) \; s
 $$
 
+$$
+\mathcal{E}[\![ x ]\!] \rho_F \; \kappa_E \; s = \kappa_E(s \; x) \; s
+$$
 
-denotacja odwołania się do zmiennej
+$$
+\mathcal{E}[\![e_1 + e_2]\!] \rho_F \; \kappa_E \; s = \mathcal{E}[\![e_1]\!] \rho_F (\lambda n_1.
+\mathcal{E}[\![e_2]\!] \rho_F (\lambda n_2.
+\kappa_E (n_1+n_2))) s
+$$
 
-denotacja plusa
-
-wzmianka że denotacje minusa i mnożenia są takie same
+Denotacje dla odejmowania i mnożenia są analogiczne.
 
 $$
 \mathcal{E}[\![ f() ]\!] \rho_F \; \kappa_E \; s = \mathcal{E}[\![ e_d ]\!] \rho_F (\lambda n. \; \beta \; \kappa_E(n) \; \kappa_E) s
@@ -159,16 +164,26 @@ $$
 \rho_F(f) = (\beta, e_d)
 $$
 
-Innymi słowy, wyciągamy ze środowiska funkcji krotkę oznaczającą ciało funkcji i jej wyrażenie domyślne, i przekazujemy kontrolę wyrażeniu domyślnemu, mówiąc, że tym, co się stanie z jego wynikiem $n$, będzie nowo skonstruowana kontynuacja zależna od $n$. Ta kontynuacja z kolei jest wykonaniem ciała funkcji, biorąc jako kontynuację domyślną $\kappa_E(n)$, a jako kontynuację dla instrukcji $\texttt{return}$ - $\kappa_E$.
+Innymi słowy, wyciągamy ze środowiska funkcji krotkę oznaczającą ciało funkcji i jej wyrażenie domyślne, i przekazujemy kontrolę wyrażeniu domyślnemu, mówiąc, że tym, co się stanie z jego wynikiem $n$, będzie nowo skonstruowana kontynuacja wyrażenia arytmetycznego zależna od $n$. Ta kontynuacja z kolei jest - nieformalnie mówiąc - wykonaniem ciała funkcji, biorąc jako kontynuację domyślną $\kappa_E(n)$, a jako kontynuację dla instrukcji $\texttt{return}$ - $\kappa_E$.
 
 
-denotacja literału bulionowego
+$$
+\mathcal{B}[\![ \text{true} ]\!] \rho_F \; \kappa_B \; s = \kappa_B \; \text{tt} \; s
+$$
 
-denotacja negacji
+analogicznie dla fałszu.
+
+todo sprawdzić - na slajdach jest chyba błąd, kappa_E zamiast kappa_B
+
+$$
+\mathcal{B}[\![ \text{not} \; b]\!] \rho_F \; \kappa_B \; s = \mathcal{B}[\![b]\!] \; \rho_F \; (\lambda d. \; \kappa_B \; ifte(d, \; \text{ff}, \; \text{tt})) s
+$$
+
+uruchamiamy wyrażenie b mówiąc mu że funkcją zaaplikowaną do jego wyniku będzie jakaś lambda ifte b kontynuacja fałszu kontynuacja prawdy
 
 denotacja koniunkcji sfer
 
-denotacja równości dwóch wyrażeń, ojej
+denotacja równości dwóch wyrażeń
 
 wzmianka że denotacja znaku mniejszości działa tak samo
 
