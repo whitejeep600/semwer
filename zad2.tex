@@ -176,30 +176,38 @@ analogicznie dla fałszu.
 todo sprawdzić - na slajdach jest chyba błąd, kappa_E zamiast kappa_B
 
 $$
-\mathcal{B}[\![ \text{not} \; b]\!] \rho_F \; \kappa_B \; s = \mathcal{B}[\![b]\!] \; \rho_F \; (\lambda d. \; \kappa_B \; ifte(d, \; \text{ff}, \; \text{tt})) s
+\mathcal{B}[\![ \text{not} \; b]\!] \rho_F \; \kappa_B \; s = \mathcal{B}[\![b]\!] \; \rho_F \; (\lambda d. \; \kappa_B \; (\lnot d) ) s
 $$
 
-uruchamiamy wyrażenie b mówiąc mu że funkcją zaaplikowaną do jego wyniku będzie jakaś lambda ifte b kontynuacja fałszu kontynuacja prawdy
+$$
+\mathcal{B}[\![b_1 \land b_2]\!] \rho_F \; \kappa_B \; s = \mathcal{B}[\![b_1 ]\!] \rho_F \; (\lambda d_1. \; \mathcal{B}[\![b_2]\!] \; \rho_F \; (\lambda d_2. \kappa_B(d_1 \land d_2))) s
+$$
 
-denotacja koniunkcji sfer
+$$
+\mathcal{B}[\![ e_1 < e_2 ]\!] \rho_F \; \kappa_B \; s = \mathcal{E}[\![e_1]\!] \rho_F (\lambda n_1.
+\mathcal{E}[\![e_2]\!] \rho_F (\lambda n_2.
+\kappa_B (n_1 < n_2))) s
+$$
 
-denotacja równości dwóch wyrażeń
-
-wzmianka że denotacja znaku mniejszości działa tak samo
+Dla $e_1 = e_2$ analogicznie.
 
 \subsection*{Denotacje instrukcji}
 
-denotacja przypisania
+$$
+\mathcal{S}[\![ x := e ]\!] \rho_F \kappa \kappa_E s = 
+$$
+
+przekazujemy kontrolę wyrażeniu e, mówiąc mu, że jak da wynik n, to my uruchomimy lambdę (kontynuację wyrażenia arytmetycznego) która jak dostanie to n oraz jaakiś stan s, to zwróci ostateczny wynik działania programu, który powstanie przez odpalenie kappa z tym n oraz zmienionym s. czyli chyba lambda n lambda s'?
 
 denotacja średnika
 
 denotacja ifa
 
-denotacja while'a
+denotacja while'a, stałopunktowa
 
 denotacja bloku
 
-denotacja returna?
+denotacja returna
 
 \subsection*{Denotacje deklaracji}
 
