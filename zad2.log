@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.12.21)  29 DEC 2021 20:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.12.21)  29 DEC 2021 21:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -274,13 +274,25 @@ LaTeX Font Info:    Trying to load font information for U+eus on input line 120
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
 )
-Overfull \hbox (2.58179pt too wide) in paragraph at lines 167--168
-\T1/cmr/m/n/10 funkcji i jej wyra»enie domy±lne, i przekazujemy kontrol¦ wyra»e
-niu domy±lnemu,
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
+
+ []
+
+
+Overfull \hbox (2.79471pt too wide) in paragraph at lines 167--168
+\T1/cmr/m/n/10 funkcji i jej wyra»enie domy±lne (tj. okre±laj¡ce domy±lny wynik
+), i przekazujemy
+ []
+
+
+Overfull \hbox (5.99579pt too wide) in paragraph at lines 167--168
+\T1/cmr/m/n/10 funkcji, bior¡c jako kontynuacj¦ domy±ln¡ $\OML/cmm/m/it/10 ^^T[
+]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n\OT1/cmr/m/n/10 )$\T1/cmr/m/n/10 , a jako k
+ontynuacj¦ dla instrukcji
  []
 
 [2]
-Overfull \hbox (35.93471pt too wide) detected at line 210
+Overfull \hbox (35.93471pt too wide) detected at line 211
 \U/eus/m/n/10 I\OT1/cmr/m/n/10 [ [[] \OML/cmm/m/it/10 b [] I[] [] I[]\OT1/cmr/m
 /n/10 ] ] \OML/cmm/m/it/10 ^^Z[] ^^T ^^T[] s \OT1/cmr/m/n/10 = \U/eus/m/n/10 B\
 OT1/cmr/m/n/10 [ [\OML/cmm/m/it/10 b\OT1/cmr/m/n/10 ] ] \OML/cmm/m/it/10 ^^Z[] 
@@ -292,7 +304,7 @@ L/cmm/m/it/10 ^^Z[] ^^T ^^T[];  \U/eus/m/n/10 I\OT1/cmr/m/n/10 [ [\OML/cmm/m/it
  []
 
 
-Overfull \hbox (41.63667pt too wide) detected at line 222
+Overfull \hbox (41.63667pt too wide) detected at line 223
 \U/eus/m/n/10 I\OT1/cmr/m/n/10 [ [[] \OML/cmm/m/it/10 b [] I\OT1/cmr/m/n/10 ] ]
  \OML/cmm/m/it/10 ^^Z[] ^^T ^^T[] \OT1/cmr/m/n/10 = \U/eus/m/n/10 B\OT1/cmr/m/n
 /10 [ [\OML/cmm/m/it/10 b\OT1/cmr/m/n/10 ] ] \OML/cmm/m/it/10 ^^Z[] \OT1/cmr/m/
@@ -306,7 +318,7 @@ L/cmm/m/it/10 ^^T[];  ^^T\OT1/cmr/m/n/10 ))
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.241 
+l.242 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -314,7 +326,7 @@ you left one out. Proceed, with fingers crossed.
 ! Display math should end with $$.
 <to be read again> 
                    \par 
-l.241 
+l.242 
       
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
@@ -322,7 +334,7 @@ So I shall assume that you typed `$$' both times.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.243 
+l.244 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -330,13 +342,13 @@ you left one out. Proceed, with fingers crossed.
 ! Display math should end with $$.
 <to be read again> 
                    \par 
-l.243 
+l.244 
       
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
 
-Overfull \hbox (7.24731pt too wide) in paragraph at lines 248--249
+Overfull \hbox (7.24731pt too wide) in paragraph at lines 249--250
 \T1/cmr/m/n/10 Tak jak przy instrukcji $[]$, mo»emy roboczo skonstruowa¢ ''defi
 nicj¦'' deklaracji
  []
@@ -345,7 +357,7 @@ nicj¦'' deklaracji
 Here is how much of TeX's memory you used:
  3477 strings out of 481209
  45502 string characters out of 5914746
- 339250 words of memory out of 5000000
+ 340250 words of memory out of 5000000
  20372 multiletter control sequences out of 15000+600000
  418450 words of font info for 73 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
@@ -363,9 +375,9 @@ msfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb>
-Output written on zad2.pdf (4 pages, 107709 bytes).
+Output written on zad2.pdf (4 pages, 108339 bytes).
 PDF statistics:
- 214 PDF objects out of 1000 (max. 8388607)
+ 215 PDF objects out of 1000 (max. 8388607)
  55 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)

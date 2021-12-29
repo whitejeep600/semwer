@@ -154,7 +154,7 @@ $$
 \kappa_E (n_1+n_2))) \; s
 $$
 
-Denotacje dla odejmowania i mnożenia są analogiczne.
+Denotacje dla odejmowania i mnożenia są analogiczne. \\
 
 $$
 \mathcal{E}[\![ f() ]\!] \; \rho_F \; \kappa_E \; s = \mathcal{E}[\![ e_d ]\!] \; \rho_F \; (\lambda n. \; \beta \; \kappa_E(n) \; \kappa_E)\;  s
@@ -164,7 +164,7 @@ $$
 \rho_F(f) = (\beta, e_d)
 $$
 
-Innymi słowy, wyciągamy ze środowiska funkcji krotkę oznaczającą ciało funkcji i jej wyrażenie domyślne, i przekazujemy kontrolę wyrażeniu domyślnemu, mówiąc, że tym, co się stanie z jego wynikiem $n$, będzie nowo skonstruowana kontynuacja wyrażenia arytmetycznego zależna od $n$. Ta kontynuacja z kolei jest - nieformalnie mówiąc - wykonaniem ciała funkcji, biorąc jako kontynuację domyślną $\kappa_E(n)$, a jako kontynuację dla instrukcji $\texttt{return}$ - $\kappa_E$.
+Innymi słowy, wyciągamy ze środowiska funkcji krotkę oznaczającą ciało funkcji i jej wyrażenie domyślne (tj. określające domyślny wynik), i przekazujemy kontrolę wyrażeniu domyślnemu, mówiąc, że tym, co się stanie z jego wynikiem $n$, będzie nowo skonstruowana kontynuacja wyrażenia arytmetycznego zależna od $n$. Ta kontynuacja z kolei jest - nieformalnie mówiąc - wykonaniem ciała funkcji, biorąc jako kontynuację domyślną $\kappa_E(n)$, a jako kontynuację dla instrukcji $\texttt{return}$ - $\kappa_E$.
 
 
 $$
@@ -187,12 +187,13 @@ $$
 \kappa_B (n_1 < n_2))) \; s
 $$
 
-Dla $e_1 = e_2$ analogicznie.
+Dla $e_1 = e_2$ analogicznie. Drobna uwaga: być może użyty tu zapis $n_1 < n_2$ nie jest do końca formalny. Oczywiście chodzi tu o wyrażenie boolowskie które przyjmuje wartość $tt$, gdy $n_1 < n_2$, a $ff$ w przeciwnym wypadku.
+
 
 \subsection*{Denotacje instrukcji}
 
 $$
-\mathcal{I}[\![ x := e ]\!] \; \rho_F \; \kappa \; \kappa_E \; s = \mathcal{I}[\![ e ]\!] \; \rho_F \; (\lambda n. \lambda s'. \; \kappa \; s'[x \mapsto n]) \; \kappa_E \; s
+\mathcal{I}[\![ x := e ]\!] \; \rho_F \; \kappa \; \kappa_E \; s = \mathcal{E}[\![ e ]\!] \; \rho_F \; (\lambda n. \lambda s'. \; \kappa \; s'[x \mapsto n]) \; \; s
 $$
 
 $$
@@ -222,7 +223,7 @@ $$
 $$
 Czyli $\mathcal{I}[\![ \text{while} \; b \; \text{do} \; I  ]\!] \; \rho_F \; \kappa \; \kappa_E \; = fix(\Phi)$ dla
 $$
-\Phi F = \mathcal{B}[\![ b ]\!] \; \rho_F \; (\lambda d. ifte (d, \;
+\Phi (F) = \mathcal{B}[\![ b ]\!] \; \rho_F \; (\lambda d. ifte (d, \;
 \mathcal{I}[\![ I ]\!] \; \rho_F \; F \; \kappa_E
 , \; 
 \kappa
@@ -237,7 +238,7 @@ $$
 
 $$
 \mathcal{I}[\![ \text{return} \; e ]\!] \; \rho_F \; \kappa \; \kappa_E \; s = 
- \mathcal{E}[\![e]\!] \rho_F (\lambda n. \; \kappa_E(n)) s
+ \mathcal{E}[\![e]\!] \; \rho_F \; (\lambda n. \; \kappa_E(n)) \; s
 
 $$
 
