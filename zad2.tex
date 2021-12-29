@@ -132,7 +132,7 @@ $$
 
 Dla deklaracji:
 $$
-\mathcal{D}[\![]\!]: \text{FDecl} \longrightarrow \text{FEnv} \longrightarrow \text{Cont}_D \longrightarrow \text{State} \rightharpoonup \text{Ans}
+\mathcal{D}[\![]\!]: \text{FDecl} \longrightarrow \text{FEnv} \longrightarrow \text{Cont}_D \rightharpoonup \text{Ans}
 $$
 
 
@@ -149,15 +149,15 @@ $$
 $$
 
 $$
-\mathcal{E}[\![e_1 + e_2]\!] \rho_F \; \kappa_E \; s = \mathcal{E}[\![e_1]\!] \rho_F (\lambda n_1.
-\mathcal{E}[\![e_2]\!] \rho_F (\lambda n_2.
-\kappa_E (n_1+n_2))) s
+\mathcal{E}[\![e_1 + e_2]\!] \; \rho_F \; \kappa_E \; s = \mathcal{E}[\![e_1]\!] \; \rho_F \; (\lambda n_1. \;
+\mathcal{E}[\![e_2]\!] \; \rho_F \; (\lambda n_2. \;
+\kappa_E (n_1+n_2))) \; s
 $$
 
 Denotacje dla odejmowania i mnożenia są analogiczne.
 
 $$
-\mathcal{E}[\![ f() ]\!] \rho_F \; \kappa_E \; s = \mathcal{E}[\![ e_d ]\!] \rho_F (\lambda n. \; \beta \; \kappa_E(n) \; \kappa_E) s
+\mathcal{E}[\![ f() ]\!] \; \rho_F \; \kappa_E \; s = \mathcal{E}[\![ e_d ]\!] \; \rho_F \; (\lambda n. \; \beta \; \kappa_E(n) \; \kappa_E)\;  s
 $$
 gdzie
 $$
@@ -168,23 +168,23 @@ Innymi słowy, wyciągamy ze środowiska funkcji krotkę oznaczającą ciało fu
 
 
 $$
-\mathcal{B}[\![ \text{true} ]\!] \rho_F \; \kappa_B \; s = \kappa_B \; \text{tt} \; s
+\mathcal{B}[\![ \text{true} ]\!] \; \rho_F \; \kappa_B \; s = \kappa_B \; \text{tt} \; s
 $$
 
 analogicznie dla fałszu.
 
 $$
-\mathcal{B}[\![ \text{not} \; b]\!] \rho_F \; \kappa_B \; s = \mathcal{B}[\![b]\!] \; \rho_F \; (\lambda d. \; \kappa_B \; (\lnot d) ) s
+\mathcal{B}[\![ \text{not} \; b]\!] \; \rho_F \; \kappa_B \; s = \mathcal{B}[\![b]\!] \; \rho_F \; (\lambda d. \; \kappa_B \; (\lnot d) ) s
 $$
 
 $$
-\mathcal{B}[\![b_1 \land b_2]\!] \rho_F \; \kappa_B \; s = \mathcal{B}[\![b_1 ]\!] \rho_F \; (\lambda d_1. \; \mathcal{B}[\![b_2]\!] \; \rho_F \; (\lambda d_2. \kappa_B(d_1 \land d_2))) s
+\mathcal{B}[\![b_1 \land b_2]\!] \; \rho_F \; \kappa_B \; s = \mathcal{B}[\![b_1 ]\!] \; \rho_F \; (\lambda d_1. \; \mathcal{B}[\![b_2]\!] \; \rho_F \; (\lambda d_2. \kappa_B(d_1 \land d_2))) s
 $$
 
 $$
-\mathcal{B}[\![ e_1 < e_2 ]\!] \rho_F \; \kappa_B \; s = \mathcal{E}[\![e_1]\!] \rho_F (\lambda n_1.
-\mathcal{E}[\![e_2]\!] \rho_F (\lambda n_2.
-\kappa_B (n_1 < n_2))) s
+\mathcal{B}[\![ e_1 < e_2 ]\!] \; \rho_F \; \kappa_B \; s = \mathcal{E}[\![e_1]\!] \; \rho_F \; (\lambda n_1. \;
+\mathcal{E}[\![e_2]\!] \; \rho_F \; (\lambda n_2. \;
+\kappa_B (n_1 < n_2))) \; s
 $$
 
 Dla $e_1 = e_2$ analogicznie.
@@ -212,27 +212,66 @@ $$
 ''Robocza'', niestałopunktowa denotacja instrukcji $\texttt{while}$ wyglądałaby tak:
 
 $$
-\mathcal{I}[\![ \text{while} \; b \; \text{do} \; I  ]\!] \; \rho_F \; \kappa \; \kappa_E \; s = \mathcal{B}[\![ b ]\!] \; \rho_F \; (\lambda d. ifte (d, \;
-\mathcal{I}[\![ \text{while} \; b \; \text{do} \; I  ]\!] \; \rho_F \; \kappa \; \kappa_E
+\mathcal{I}[\![ \text{while} \; b \; \text{do} \; I  ]\!] \; \rho_F \; \kappa \; \kappa_E = \mathcal{B}[\![ b ]\!] \; \rho_F \; (\lambda d. ifte (d, \;
+\mathcal{I}[\![ I ]\!] \; \rho_F \; (
+\mathcal{I}[\![ \text{while} \; b \; \text{do} \; I ]\!] \; \rho_F \; \kappa \; \kappa_E \;
+) \; \kappa_E
 , \; 
 \kappa
-)) \; s
+))
+$$
+Czyli $\mathcal{I}[\![ \text{while} \; b \; \text{do} \; I  ]\!] \; \rho_F \; \kappa \; \kappa_E \; = fix(\Phi)$ dla
+$$
+\Phi F = \mathcal{B}[\![ b ]\!] \; \rho_F \; (\lambda d. ifte (d, \;
+\mathcal{I}[\![ I ]\!] \; \rho_F \; F \; \kappa_E
+, \; 
+\kappa
+))
+$$
+
+$$
+\mathcal{I}[\![ \text{begin} \; d_F \; I \; \text{end} ]\!] \; \rho_F \; \kappa \; \kappa_E \; s = 
+\mathcal{D}[\![ d_F ]\!] \; \rho_F \; (\lambda \rho. \;
+\mathcal{I}[\![ I ]\!] \; \rho \; \kappa \; \kappa_E \; s )
+$$
+
+$$
+\mathcal{I}[\![ \text{return} \; e ]\!] \; \rho_F \; \kappa \; \kappa_E \; s = 
+ \mathcal{E}[\![e]\!] \rho_F (\lambda n. \; \kappa_E(n)) s
+
 $$
 
 
-denotacja bloku
-
-denotacja returna
-
 \subsection*{Denotacje deklaracji}
 
-widoczność funkcji jest statyczna - tzn jeśli mamy funkcję f która wywołuje funkcję g, i w momencie deklaracji f jest widoczna g, a potem w jakimś bloku mamy przesłonioną definicję g i wywołamy f, to f skorzysta z tego g, które zobaczyła w momencie deklaracji, a nie wywołania. innymi słowy funkcje pamiętają środowisko funkcji z momentu deklaracji (wywołanie nie przyjmuje środowiska funkcji jako argumentu - no w każdym razie, na slajdach było jak zrobić widoczność statyczną)
 
-funkcje są rekurencyjne, więc definicja deklaracji funkcji musi być stałopunktowa.
+Tak jak przy instrukcji $\texttt{while}$, możemy roboczo skonstruować  ''definicję'' deklaracji funkcji (potencjalnie rekurencyjnej), która nie jest kompozycjonalna:
 
-denotacja deklaracji funkcji
-
-denotacja złożenia deklaracji funkcji też
+$$
+\mathcal{D}[\![ \text{fun} \; f \; \text{result} \; e \; do \; (I) ]\!] \; \rho_F \; \kappa_D = \kappa_D \; (\rho_F [ f \mapsto \; F ])
+$$
+gdzie
+$$
+F = \langle 
+\mathcal{I}[\![ I ]\!] \; \rho_F [f  \mapsto F]
+, \; e \rangle
+$$
+I teraz możemy przepisać to na poprawną definicję stałopunktową:
+$$
+\mathcal{D}[\![ \text{fun} \; f \; \text{result} \; e \; do \; (I) ]\!] \; \rho_F \; \kappa_D = \kappa_D \; (\rho_F [ f \mapsto \; fix(\Phi) ])
+$$
+gdzie
+$$
+\Phi(F) = \langle 
+\mathcal{I}[\![ I ]\!] \; \rho_F [f  \mapsto F]
+, \; e \rangle
+$$
+Dalej dla złożenia deklaracji:
+$$
+\mathcal{D}[\![ d_{F1} ; d_{F2} ]\!] \; \rho_F \; \kappa_D = 
+\mathcal{D}[\![ d_{F1} ]\!] \; \rho_F \; (\lambda \rho . \;
+\mathcal{D}[\![ d_{F2} ]\!] \; \rho \; \kappa_D)
+$$
 
 \end{document}
 
