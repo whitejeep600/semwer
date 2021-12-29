@@ -79,7 +79,7 @@ $$
 Dalej, dla kontynuacji wyrażeń arytmetycznych:
 
 $$
-\text{Cont}_E = \text{Num} \longrightarrow \text{State} \rightharpoonup\text{Ans}
+\text{Cont}_E = \text{Int} \longrightarrow \text{State} \rightharpoonup\text{Ans}
 $$
 
 Tutaj istotne jest, że wyrażenia mogą zmieniać stan, więc nie może być $\text{Cont}_E = \text{Num} \rightharpoonup \text{Ans}$. Dla wyrażeń boolowskich:
@@ -173,8 +173,6 @@ $$
 
 analogicznie dla fałszu.
 
-todo sprawdzić - na slajdach jest chyba błąd, kappa_E zamiast kappa_B
-
 $$
 \mathcal{B}[\![ \text{not} \; b]\!] \rho_F \; \kappa_B \; s = \mathcal{B}[\![b]\!] \; \rho_F \; (\lambda d. \; \kappa_B \; (\lnot d) ) s
 $$
@@ -194,16 +192,33 @@ Dla $e_1 = e_2$ analogicznie.
 \subsection*{Denotacje instrukcji}
 
 $$
-\mathcal{S}[\![ x := e ]\!] \rho_F \kappa \kappa_E s = 
+\mathcal{I}[\![ x := e ]\!] \; \rho_F \; \kappa \; \kappa_E \; s = \mathcal{I}[\![ e ]\!] \; \rho_F \; (\lambda n. \lambda s'. \; \kappa \; s'[x \mapsto n]) \; \kappa_E \; s
 $$
 
-przekazujemy kontrolę wyrażeniu e, mówiąc mu, że jak da wynik n, to my uruchomimy lambdę (kontynuację wyrażenia arytmetycznego) która jak dostanie to n oraz jaakiś stan s, to zwróci ostateczny wynik działania programu, który powstanie przez odpalenie kappa z tym n oraz zmienionym s. czyli chyba lambda n lambda s'?
+$$
+\mathcal{I}[\![ I_1; I_2 ]\!] \; \rho_F \; \kappa \; \kappa_E \; s = \mathcal{I}[\![ I_1 ]\!] \; \rho_F \; (
+\mathcal{I}[\![ I_2 ]\!] \; \rho_F \; \kappa \; \kappa_E \;
+) \; \kappa_E \; s
+$$
 
-denotacja średnika
+$$
+\mathcal{I}[\![ \text{if} \; b \; \text{then} \; I_1 \; \text{else} \; I_2 ]\!] \; \rho_F \; \kappa \; \kappa_E \; s = \mathcal{B}[\![ b ]\!] \; \rho_F \; (\lambda d. ifte (d, \;
+\mathcal{I}[\![ I_1 ]\!] \; \rho_F \; \kappa \; \kappa_E
+, \; 
+\mathcal{I}[\![ I_2 ]\!] \; \rho_F \; \kappa \; \kappa_E
+)) \; \; s
+$$
 
-denotacja ifa
+''Robocza'', niestałopunktowa denotacja instrukcji $\texttt{while}$ wyglądałaby tak:
 
-denotacja while'a, stałopunktowa
+$$
+\mathcal{I}[\![ \text{while} \; b \; \text{do} \; I  ]\!] \; \rho_F \; \kappa \; \kappa_E \; s = \mathcal{B}[\![ b ]\!] \; \rho_F \; (\lambda d. ifte (d, \;
+\mathcal{I}[\![ \text{while} \; b \; \text{do} \; I  ]\!] \; \rho_F \; \kappa \; \kappa_E
+, \; 
+\kappa
+)) \; s
+$$
+
 
 denotacja bloku
 

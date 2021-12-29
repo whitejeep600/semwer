@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.12.21)  28 DEC 2021 21:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.12.21)  29 DEC 2021 14:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -280,24 +280,19 @@ niu domy±lnemu,
  []
 
 [2]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.176 ...‡ - na slajdach jest chyba bÅ‚Ä…d, kappa_
-                                                  E zamiast kappa_B
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.177 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+Overfull \hbox (35.93471pt too wide) detected at line 210
+\U/eus/m/n/10 I\OT1/cmr/m/n/10 [ [[] \OML/cmm/m/it/10 b [] I[] [] I[]\OT1/cmr/m
+/n/10 ] ] \OML/cmm/m/it/10 ^^Z[] ^^T ^^T[] s \OT1/cmr/m/n/10 = \U/eus/m/n/10 B\
+OT1/cmr/m/n/10 [ [\OML/cmm/m/it/10 b\OT1/cmr/m/n/10 ] ] \OML/cmm/m/it/10 ^^Z[] 
+\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^Ud:ifte\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d;
+  \U/eus/m/n/10 I\OT1/cmr/m/n/10 [ [\OML/cmm/m/it/10 I[]\OT1/cmr/m/n/10 ] ] \OM
+L/cmm/m/it/10 ^^Z[] ^^T ^^T[];  \U/eus/m/n/10 I\OT1/cmr/m/n/10 [ [\OML/cmm/m/it
+/10 I[]\OT1/cmr/m/n/10 ] ] \OML/cmm/m/it/10 ^^Z[] ^^T ^^T[]\OT1/cmr/m/n/10 ))  
+\OML/cmm/m/it/10 s
+ []
 
 
-Overfull \hbox (17.63733pt too wide) in paragraph at lines 214--215
+Overfull \hbox (17.63733pt too wide) in paragraph at lines 231--232
 []\T1/cmr/m/n/10 funkcje s¡ rekurencyjne, wi¦c definicja deklaracji funkcji mus
 i by¢ staªopunktowa. 
  []
@@ -322,11 +317,12 @@ ur/jknappen/ec/ecrm1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public
 nts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb>
-Output written on zad2.pdf (3 pages, 98054 bytes).
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb>
+Output written on zad2.pdf (3 pages, 105495 bytes).
 PDF statistics:
- 203 PDF objects out of 1000 (max. 8388607)
- 50 compressed objects within 1 object stream
+ 210 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
