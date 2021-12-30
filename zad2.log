@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.12.21)  29 DEC 2021 21:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.12.21)  30 DEC 2021 20:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -259,40 +259,54 @@ cze w programie
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-13.
+17.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-Overfull \hbox (17.31894pt too wide) in paragraph at lines 113--114
+LaTeX Font Info:    Trying to load font information for U+eus on input line 117
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueus.fd
+File: ueus.fd 2013/01/14 v3.01 Euler Script
+)
+Overfull \hbox (17.31894pt too wide) in paragraph at lines 117--118
 \T1/cmr/m/n/10 pierwsza cz¦±¢ intuicyjnie jest odpowiedzialna za wykonanie ciaª
 a funkcji. Natomiast
  []
 
-LaTeX Font Info:    Trying to load font information for U+eus on input line 120
-.
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueus.fd
-File: ueus.fd 2013/01/14 v3.01 Euler Script
-)
-Underfull \hbox (badness 10000) in paragraph at lines 157--158
+
+Overfull \hbox (17.74475pt too wide) in paragraph at lines 117--118
+\T1/cmr/m/n/10 Skutkuje to tym, »e przy wyliczaniu wyra»enia przed wywoªaniem f
+unkcji obowi¡zuje
+ []
+
+
+Overfull \hbox (3.87778pt too wide) in paragraph at lines 117--118
+\T1/cmr/m/n/10 ka»dorazowo ±rodowisko funkcji z momentu wywoªania. Jest to ±wia
+doma decyzja
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
 
  []
 
 
-Overfull \hbox (2.79471pt too wide) in paragraph at lines 167--168
+Overfull \hbox (2.79471pt too wide) in paragraph at lines 171--172
 \T1/cmr/m/n/10 funkcji i jej wyra»enie domy±lne (tj. okre±laj¡ce domy±lny wynik
 ), i przekazujemy
  []
 
 
-Overfull \hbox (5.99579pt too wide) in paragraph at lines 167--168
+Overfull \hbox (5.99579pt too wide) in paragraph at lines 171--172
 \T1/cmr/m/n/10 funkcji, bior¡c jako kontynuacj¦ domy±ln¡ $\OML/cmm/m/it/10 ^^T[
 ]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n\OT1/cmr/m/n/10 )$\T1/cmr/m/n/10 , a jako k
 ontynuacj¦ dla instrukcji
  []
 
-[2]
-Overfull \hbox (35.93471pt too wide) detected at line 211
+
+Overfull \hbox (35.93471pt too wide) detected at line 215
 \U/eus/m/n/10 I\OT1/cmr/m/n/10 [ [[] \OML/cmm/m/it/10 b [] I[] [] I[]\OT1/cmr/m
 /n/10 ] ] \OML/cmm/m/it/10 ^^Z[] ^^T ^^T[] s \OT1/cmr/m/n/10 = \U/eus/m/n/10 B\
 OT1/cmr/m/n/10 [ [\OML/cmm/m/it/10 b\OT1/cmr/m/n/10 ] ] \OML/cmm/m/it/10 ^^Z[] 
@@ -304,7 +318,7 @@ L/cmm/m/it/10 ^^Z[] ^^T ^^T[];  \U/eus/m/n/10 I\OT1/cmr/m/n/10 [ [\OML/cmm/m/it
  []
 
 
-Overfull \hbox (41.63667pt too wide) detected at line 223
+Overfull \hbox (41.63667pt too wide) detected at line 227
 \U/eus/m/n/10 I\OT1/cmr/m/n/10 [ [[] \OML/cmm/m/it/10 b [] I\OT1/cmr/m/n/10 ] ]
  \OML/cmm/m/it/10 ^^Z[] ^^T ^^T[] \OT1/cmr/m/n/10 = \U/eus/m/n/10 B\OT1/cmr/m/n
 /10 [ [\OML/cmm/m/it/10 b\OT1/cmr/m/n/10 ] ] \OML/cmm/m/it/10 ^^Z[] \OT1/cmr/m/
@@ -315,10 +329,11 @@ n/10 I\OT1/cmr/m/n/10 [ [\OML/cmm/m/it/10 I\OT1/cmr/m/n/10 ] ] \OML/cmm/m/it/10
 L/cmm/m/it/10 ^^T[];  ^^T\OT1/cmr/m/n/10 ))
  []
 
+[3]
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.242 
+l.246 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -326,7 +341,7 @@ you left one out. Proceed, with fingers crossed.
 ! Display math should end with $$.
 <to be read again> 
                    \par 
-l.242 
+l.246 
       
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
@@ -334,7 +349,7 @@ So I shall assume that you typed `$$' both times.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.244 
+l.248 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -342,42 +357,42 @@ you left one out. Proceed, with fingers crossed.
 ! Display math should end with $$.
 <to be read again> 
                    \par 
-l.244 
+l.248 
       
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
 
-Overfull \hbox (7.24731pt too wide) in paragraph at lines 249--250
+Overfull \hbox (7.24731pt too wide) in paragraph at lines 253--254
 \T1/cmr/m/n/10 Tak jak przy instrukcji $[]$, mo»emy roboczo skonstruowa¢ ''defi
 nicj¦'' deklaracji
  []
 
-[3] [4] (./zad2.aux) ) 
+[4] (./zad2.aux) ) 
 Here is how much of TeX's memory you used:
  3477 strings out of 481209
  45502 string characters out of 5914746
- 340250 words of memory out of 5000000
+ 339250 words of memory out of 5000000
  20372 multiletter control sequences out of 15000+600000
  418450 words of font info for 73 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 67i,6n,74p,685b,216s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/antoni/.texlive2020/texmf-var/fonts/pk/ljfour/jkn
-appen/ec/ectt1000.600pk> </home/antoni/.texlive2020/texmf-var/fonts/pk/ljfour/j
-knappen/ec/ecrm1000.600pk> </home/antoni/.texlive2020/texmf-var/fonts/pk/ljfour
-/jknappen/ec/ecbx1200.600pk> </home/antoni/.texlive2020/texmf-var/fonts/pk/ljfo
-ur/jknappen/ec/ecbx1440.600pk> </home/antoni/.texlive2020/texmf-var/fonts/pk/lj
-four/jknappen/ec/ecrm1200.600pk> </home/antoni/.texlive2020/texmf-var/fonts/pk/
-ljfour/jknappen/ec/ecrm1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb>
-Output written on zad2.pdf (4 pages, 108339 bytes).
+ 67i,6n,74p,1198b,216s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/antoni/.texlive2020/texmf-var/fonts/pk/ljfour/jknappe
+n/ec/ectt1000.600pk> </home/antoni/.texlive2020/texmf-var/fonts/pk/ljfour/jknap
+pen/ec/ecrm1000.600pk> </home/antoni/.texlive2020/texmf-var/fonts/pk/ljfour/jkn
+appen/ec/ecbx1200.600pk> </home/antoni/.texlive2020/texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecbx1440.600pk> </home/antoni/.texlive2020/texmf-var/fonts/pk/ljfour
+/jknappen/ec/ecrm1200.600pk> </home/antoni/.texlive2020/texmf-var/fonts/pk/ljfo
+ur/jknappen/ec/ecrm1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb>
+Output written on zad2.pdf (4 pages, 109260 bytes).
 PDF statistics:
- 215 PDF objects out of 1000 (max. 8388607)
+ 216 PDF objects out of 1000 (max. 8388607)
  55 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)

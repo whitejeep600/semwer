@@ -107,10 +107,14 @@ $$
 Gdzie $\text{FName}$ to nazwy funkcji, natomiast funkcje reprezentuje typ $\text{Fun}$:
 
 $$
-\text{Fun} = (\text{Cont} \longrightarrow \text{Cont}_E \longrightarrow \text{State} \rightharpoonup \text{Ans}) \times \text{Expr}
+\text{Fun} = (\text{Cont} \longrightarrow \text{Cont}_E \longrightarrow \text{State} \rightharpoonup \text{Ans}) \times \text{EXPR}
+$$
+gdzie
+$$
+\text{EXPR} = \text{FEnv} \longrightarrow \text{Cont}_E \longrightarrow \text{State} \rightharpoonup \text{Ans}
 $$
 
-Jak warto zauważyć, w pierwszej części produktu podajemy jako argumenty dwie różne kontynuacje. Ma to na celu umożliwienie zarówno wykonania całości ciała funkcji, jak i wyjście z niej wcześniej za pomocą instrukcji $\texttt{return}$. Ta pierwsza część intuicyjnie jest odpowiedzialna za wykonanie ciała funkcji. Natomiast druga część produktu to wyrażenie odpowiedzialne za domyślny wynik działania funkcji. W środowisku należy pamiętać całe to wyrażenie, gdyż będzie ono wyliczane przed każdym wywołaniem funkcji.
+Jak warto zauważyć, w pierwszej części produktu podajemy jako argumenty dwie różne kontynuacje. Ma to na celu umożliwienie zarówno wykonania całości ciała funkcji, jak i wyjście z niej wcześniej za pomocą instrukcji $\texttt{return}$. Ta pierwsza część intuicyjnie jest odpowiedzialna za wykonanie ciała funkcji. Natomiast druga część produktu to wyrażenie odpowiedzialne za domyślny wynik działania funkcji. W środowisku należy pamiętać całe to wyrażenie, gdyż będzie ono wyliczane przed każdym wywołaniem funkcji. Typ $\text{EXPR}$ jest taki sam jak typ $\mathcal{E}[\![ e ]\!]$, czyli -co istotne - nie ma jeszcze zaaplikowanego środowiska funkcji. Skutkuje to tym, że przy wyliczaniu wyrażenia przed wywołaniem funkcji obowiązuje każdorazowo środowisko funkcji z momentu wywołania. Jest to świadoma decyzja z mojej strony. W zadaniu nie jest doprecyzowane, czy ma wtedy obowiązywać środowisko z miejsca wywołania, czy deklaracji - mowa tylko o stanie. W mojej opinii takie rozwiązanie jest bardziej intuicyjne.
 
 
 \section*{Typy funkcji semantycznych}
@@ -157,7 +161,7 @@ $$
 Denotacje dla odejmowania i mnożenia są analogiczne. \\
 
 $$
-\mathcal{E}[\![ f() ]\!] \; \rho_F \; \kappa_E \; s = \mathcal{E}[\![ e_d ]\!] \; \rho_F \; (\lambda n. \; \beta \; \kappa_E(n) \; \kappa_E)\;  s
+\mathcal{E}[\![ f() ]\!] \; \rho_F \; \kappa_E \; s = e_d \; \rho_F \; (\lambda n. \; \beta \; \kappa_E(n) \; \kappa_E)\;  s
 $$
 gdzie
 $$
@@ -255,7 +259,7 @@ gdzie
 $$
 F = \langle 
 \mathcal{I}[\![ I ]\!] \; \rho_F [f  \mapsto F]
-, \; e \rangle
+, \; \mathcal{E}[\![ e ]\!] \rangle
 $$
 I teraz możemy przepisać to na poprawną definicję stałopunktową:
 $$
@@ -265,7 +269,7 @@ gdzie
 $$
 \Phi(F) = \langle 
 \mathcal{I}[\![ I ]\!] \; \rho_F [f  \mapsto F]
-, \; e \rangle
+, \; \mathcal{E}[\![ e ]\!] \rangle
 $$
 Dalej dla złożenia deklaracji:
 $$
